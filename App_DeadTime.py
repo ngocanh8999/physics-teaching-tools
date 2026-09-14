@@ -175,7 +175,7 @@ class VirtualInstrument(tk.Tk):
     def on_tau_entry(self, event=None):
         try:
             val = float(self.tau_str.get())
-            val = max(0.1, min(300.0, val)) # Giới hạn từ 0.1ms đến 300ms
+            val = max(0.001, min(300.0, val)) # Giới hạn từ 0.1ms đến 300ms
             self.tau = val / 1000.0
             self.tau_slider.set(val)
             self.tau_str.set(f"{val:.1f}")
